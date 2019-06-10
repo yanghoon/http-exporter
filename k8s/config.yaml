@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: http-scrap
+  namespace: zcp-system
+  labels:
+    app: http-scrap
+data:
+  DELAY: '5' # sec
+  CONFIG: config.yaml
+  config.yaml: |-
+    targets:
+    - name: google
+      #url: http://dev.skbiok.com
+      url: http://www.google.co.kr
+    - name: github.com
+      url: http://www.github.com

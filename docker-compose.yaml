@@ -2,12 +2,14 @@ version: '3'
 
 services:
   exporter:
-    image: http-exporter
+    image: http-scrap
     build:
       context: .
     environment:
-      - DELAY=5
-      - CONFIG=config.yaml
+    - DELAY=5
+    - CONFIG=config.yaml
+    volumes:
+    -  ./config-local.yaml:/app/config.yaml
     # entrypoint: []
     # command: []
     # ports: ["from:to"]

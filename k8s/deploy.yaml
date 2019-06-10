@@ -1,0 +1,35 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: http-scrap
+  namespace: scrap
+  labels:
+    app: http-scrap
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: http-scrap
+  template:
+    metadata:
+      labels:
+        app: http-scrap
+    spec:
+      containers:
+      - name: scrap
+        image: my-docker-hub/http-scrap:latest  # MUST
+        volumeMounts:
+        - name: config 
+          subPath: config.yaml
+          mountPath: /app/config.yaml
+        #envFrom:
+        #- configMapRef:
+        #    name: config
+      volumes:
+      - name: config
+        configMap:
+          name: http-scrap
+      hostAliases:
+      #- ip: "0.0.0.0"
+      #  hostnames:
+      #  - "site.domain.com"

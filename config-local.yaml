@@ -1,0 +1,5 @@
+targets:
+- name: google
+  url: https://google.co.kr
+- name: github
+  url: https://www.github.com
