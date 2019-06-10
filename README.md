@@ -8,6 +8,14 @@ python --version  # 3.7.x
 python main.py
 ```
 
+# on Kubernetes
+```bash
+# edit targets and dns
+kubectl apply -f k8s/config.yaml
+kubectl apply -f k8s/deploy.yaml
+kubectl logs http-scrap-xxx -n http-scrap -f
+```
+
 # Docker
 ```bash
 # Compose

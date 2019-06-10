@@ -1,5 +1,5 @@
 targets:
-- name: Google
+- name: google
   url: https://google.co.kr
-- name: Naver
-  url: https://ww.naver.com
+- name: github
+  url: https://ww.github.com
