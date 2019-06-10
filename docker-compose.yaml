@@ -1,0 +1,25 @@
+# Usage:
+#   docker-compose up -d --build
+#   docker-compose logs -f
+#   docker-compose down
+#
+#   docker-compose build
+#   docker-compose ps
+
+version: '3'
+
+services:
+  exporter:
+    build:
+      context: .
+    environment:
+      - DELAY=5
+    # entrypoint: 
+    #   - /bin/sh
+    #   - ./entrypoint.sh
+    # command: 
+    #   - ./entrypoint.sh
+    # ports:
+    #   - "8000:8000"
+    # volumes:
+    #   - ./:/app/

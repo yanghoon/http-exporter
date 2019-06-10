@@ -1,0 +1,5 @@
+targets:
+- name: Google
+  url: https://google.co.kr
+- name: Naver
+  url: https://ww.naver.com
